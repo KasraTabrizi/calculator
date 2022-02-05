@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #eef0f2;
+  color: #585f66;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#display {
+  grid-area: display;
+  background: linear-gradient(152.62deg, #ffffff 1.22%, #d6d8da 98.94%);
+  box-shadow: inset 5px 10px 22px #b5b6b8,
+    inset -10px -10px 22px rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  margin: 10px;
+}
+
+#clear__button,
+#delete__button {
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#clear__button {
+  grid-area: clear;
+  background: linear-gradient(152.62deg, #ff8989 1.22%, #ff2e2e 98.94%);
+  box-shadow: 10px 10px 22px #b5b6b8, -10px -10px 22px rgba(255, 255, 255, 0.5);
+}
+
+#delete__button {
+  grid-area: delete;
+  background: linear-gradient(152.62deg, #ffe178 1.22%, #ebbd1b 98.94%);
+  box-shadow: 10px 10px 22px #b5b6b8, -10px -10px 22px rgba(255, 255, 255, 0.5);
+}
+
+#number_0 {
+  grid-area: zero;
+}
+
+#number_1 {
+  grid-area: one;
+}
+
+#number_2 {
+  grid-area: two;
+}
+
+#number_3 {
+  grid-area: three;
+}
+
+#number_4 {
+  grid-area: four;
+}
+
+#number_5 {
+  grid-area: five;
+}
+
+#number_6 {
+  grid-area: six;
+}
+
+#number_7 {
+  grid-area: seven;
+}
+
+#number_8 {
+  grid-area: eight;
+}
+
+#number_9 {
+  grid-area: nine;
+}
+
+#symbol_dot {
+  grid-area: dot;
+}
+
+#equal_sign {
+  grid-area: equal;
+  background: linear-gradient(152.62deg, #be9fff 1.22%, #8145ff 98.94%);
+  box-shadow: 10px 10px 22px #b5b6b8, -10px -10px 22px rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+#add {
+  grid-area: add;
+}
+
+#subtract {
+  grid-area: subtract;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+.grid__button {
+  background: linear-gradient(152.62deg, #ffffff 1.22%, #d6d8da 98.94%);
+  box-shadow: 10px 10px 22px #b5b6b8, -10px -10px 22px rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2em;
+  color: #585f66;
+  cursor: pointer;
+  transition: 0.1s all ease-in;
+}
+
+.grid__button:active {
+  background: linear-gradient(152.62deg, #ffffff 1.22%, #d6d8da 98.94%);
+  box-shadow: 0px 0px 5px #b5b6b8, 0px 0px 5px #ffffff;
+}
+
+#calculator {
+  padding: 10px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(12, 50px);
+  grid-template-areas:
+    "display display display display"
+    "display display display display"
+    "display display display display"
+    "clear clear delete delete"
+    "seven eight nine multiply"
+    "seven eight nine multiply"
+    "four five six divide"
+    "four five six divide"
+    "one two three add"
+    "one two three add"
+    "zero dot equal subtract"
+    "zero dot equal subtract";
+  background: #eef0f2;
+  border: 1px solid #e1dfdf;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 22px #b5b6b8, -10px -10px 22px rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
+footer {
+  margin-top: 80px;
+}
