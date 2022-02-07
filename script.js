@@ -1,21 +1,92 @@
-const display = document.getElementById("display");
+let inputArray = [];
+let firstOperand = 0;
+let secondOperand = 0;
+let operator = "";
+
+//Outputs
+const firstScreen = document.getElementById("first_screen");
+const secondScreen = document.getElementById("second_screen");
+
+//Inputs
 const clearButton = document.getElementById("clear__button");
 const deleteButton = document.getElementById("delete__button");
-const gridButtons = document.getElementsByClassName("grid__button");
+const numbers = document.querySelectorAll("[data-number]");
+const operators = document.querySelectorAll("[data-operator]");
+const decimal = document.querySelectorAll("[data-decimal]");
 
-let inputArray = [];
+numbers.forEach((number) => {
+  number.addEventListener("click", () => appendValue(number.innerHTML));
+});
 
-for (let i = 0; i < gridButtons.length; i++) {
-  console.log(gridButtons[i].innerHTML);
-  gridButtons[i].addEventListener("click", function (e) {
-    let value = e.target.textContent;
-    console.log("Input Value: ", value);
-    inputArray.push(value);
-    console.log(inputArray);
-  });
+operators.forEach((operator) => {
+  operator.addEventListener("click", () => appendValue(operator.innerHTML));
+});
+
+decimal[0].addEventListener("click", () => appendValue("."));
+
+clearButton.addEventListener("click", () => clearInput());
+
+deleteButton.addEventListener("click", () => deleteInput());
+
+window.addEventListener("keydown", (e) => handleKeyboardKey(e));
+
+function handleKeyboardKey(e) {
+  if (e.key >= 0 && e.key <= 9) {
+    appendValue(e.key);
+  }
+  if (
+    e.key === "+" ||
+    e.key === "-" ||
+    e.key === "*" ||
+    e.key === "/" ||
+    e.key === "."
+  ) {
+    appendValue(e.key);
+  }
 }
 
-function operation(number1, number2, operator) {
+function clearInput() {
+  inputArray = [];
+  firstValue = 0;
+  secondValue = 0;
+  operand = "";
+  firstScreen.textContent = "";
+  secondScreen.textContent = "";
+}
+
+function deleteInput() {
+  inputArray.pop();
+  updateScreen();
+  console.log(inputArray);
+}
+
+function appendValue(value) {
+  inputArray.push(value);
+  console.log(inputArray);
+  updateScreen();
+
+  if(value === "="){
+    parseOperation()
+  }
+}
+
+function updateScreen() {
+  firstScreen.textContent = inputArray.join("");
+}
+
+function parseOperation(){
+    inputArray.forEach((element) => {
+        if (
+            element === "+" ||
+            element === "-" ||
+            element === "*" ||
+            element === "/" ||
+            element === "."
+          ) 
+    })
+}
+
+function calculate(number1, number2, operator) {
   if (operator === "+") {
     return number1 + number2;
   } else if (operator === "-") {
