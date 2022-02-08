@@ -65,8 +65,8 @@ function appendValue(value) {
   console.log(inputArray);
   updateScreen();
 
-  if(value === "="){
-    parseOperation()
+  if (value === "=") {
+    parseOperation();
   }
 }
 
@@ -74,16 +74,17 @@ function updateScreen() {
   firstScreen.textContent = inputArray.join("");
 }
 
-function parseOperation(){
-    inputArray.forEach((element) => {
-        if (
-            element === "+" ||
-            element === "-" ||
-            element === "*" ||
-            element === "/" ||
-            element === "."
-          ) 
-    })
+function parseOperation() {
+  inputArray.forEach((element) => {
+    if (
+      element === "+" ||
+      element === "-" ||
+      element === "*" ||
+      element === "/" ||
+      element === "."
+    ) {
+    }
+  });
 }
 
 function calculate(number1, number2, operator) {
